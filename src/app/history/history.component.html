@@ -1,0 +1,39 @@
+<!--<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+
+          <h1 class="blog-title">Title:{{post.title}}</h1>
+          <span>
+                    <p>by {{post.user.username}}</p>
+                </span>
+          <hr>
+          <h1 class="blog-content">Content</h1>
+          <p [innerHTML]="post.content"></p>
+          <hr>
+        </div>
+      </div>
+  
+    </div>
+  </div>-->
+  <div class="content">
+    <div class="container">
+        <div *ngFor="let history of historys | async">
+        <div class="blogpost">
+    
+          <div>
+            <i class="fas fa-user"></i> Number: {{history.number}}
+          </div>
+          
+          <i class="fas fa-user"></i> date: {{history.date}}
+       
+         <div>
+            <i class="fas fa-user"></i> confirm: {{history.confirm}}
+         </div>
+          <hr>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>

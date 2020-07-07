@@ -1,0 +1,49 @@
+<div class="container">
+    <form class="form-signin" [formGroup]="loginForm"  (ngSubmit)="onSubmit()" novalidate>
+     
+      <div class="form-group">
+         <div *ngIf="f.number.touched && f.number.invalid" class="alert alert-danger">
+          <div *ngIf="f.number.errors.required">number is required.</div>
+          
+      </div>  
+        <label for="inputUsername" class="sr-only">number</label>
+        <input type="text" id="inputUsername"   [formControlName]="'number'" class="form-control" placeholder="number"   autofocus="">
+      </div>
+      
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" >Validate</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onclick()">History</button>
+    </form>
+  </div>
+
+<div *ngIf="confirm" class="alert alert-danger"> {{confirm}}</div>
+<table class="table">
+    <tr>
+      <td>Valid</td>
+      <td>{{data.valid}}</td>
+    </tr>
+    <tr>
+        <td>local Format</td>
+        <td>{{data.locl_format}}</td>
+      </tr>
+      <tr>
+        <td>intlFormat</td>
+        <td>{{data.international_format}}</td>
+      </tr>
+      <tr>
+        <td>country</td>
+        <td>{{data.country_name}}</td>
+      </tr>
+      <tr>
+        <td>location</td>
+        <td>{{data.location}}</td>
+      </tr>
+      <tr>
+        <td>carrier</td>
+        <td>{{data.carrier}}</td>
+      </tr>
+      <tr>
+        <td>line type</td>
+        <td>{{data.line_type}}</td>
+      </tr>
+  </table>
